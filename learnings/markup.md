@@ -2,31 +2,47 @@
 
 ## 1. Structure a site using semantic HTML to aid accessibility
 
+Semantic tags provide meaning to the content they enclose. This aids accessibility by making it easier for screen readers and other assistive technologies to interpret the content of a web page. 
+
+Example:
 ```html
 <header>
-	<nav class="navbar">
-		<ul>
-			<li><img class="logo" src="images/logo.svg" alt="logo" /></li>
-			<li><a class="home" href="index.html">home</a></li>
-			<li><a class="pagelink" href="#about-us-main">who are we</a></li>
-			<li><a class="pagelink" href="contact-page/contact-page.html">get in touch</a></li>
-		</ul>
-	</nav>
+  <nav class="navbar">
+    <ul>
+      <li><img class="logo" src="images/logo.svg" alt="logo" /></li>
+      <li><a class="home" href="index.html">home</a></li>
+      <li><a class="pagelink" href="#about-us-main">who are we</a></li>
+      <li><a class="pagelink" href="contact-page/contact-page.html">get in touch</a></li>
+    </ul>
+  </nav>
 </header>
+
+
 ```
 
 ## 2. Make a web page more readable for screen readers
 
-Using semantic html and aria parameters, our website is mostly screen-reader accessible
+In order for a web page to be more readable for screen readers it needs to have certain accomodations such as:
+- A cohesive layout with semantic HTML,
+- h1 tag should be used only once,
+- h2-h6 should appear in the correct order,
+- Alt text for images,
+- Labels for each input element.
+
+Example:
+
 ```html
 <section class="f-box__layout">
 	<label class="f-lbl__layout" for="company-name">Company name<span class="required">*</span></label>
 	<input class="f-inp__layout f-inp__border" id="company-name" aria-describedby="required-description" type="text" name="company-name" placeholder="Company name" required />
 </section>
 ```
+
 ## 3. Design a UI without relying solely on colour, so that we don’t exclude colour-blind users
 
-Neutral colour scheme, would function the same with or without the colour.
+- Clear and concise labelling,
+- Create visual distinction by using icons, shapes or patterns,
+
 ![image](https://user-images.githubusercontent.com/105356599/203396588-0abcbf05-cd8d-4606-9c32-b4c11c208aa9.png)
 
 ## 4. Ensure our UI has sufficient colour contrast so that everyone can perceive it comfortably
@@ -66,8 +82,13 @@ https://accessibilitytest.org/results/XmRojU-MICmJ <br>
 
 ## 8. Demonstrate a mobile-first approach to designing a website with a great user experience
 
-The project itself is not entirely built upon mobile first ideology, however, it would best be accomplished by using
-responsive responsive units and media/container queries with min-width rather than max-width.
+Mobile first approach can be demonstrated by:
+- Media queries for a responsive design which adapts to different screen sizes,
+- Fluid layouts that resize automatically to fit the width of a user's device,
+- Responsive typography that adjusts automatically to the size of a user's device,
+- Avoiding the use of fixed-width elements which don't resize automatically,
+- Use touch friendly elements for smaller screen sizes,
+- Simplify the design to make it easier to use on a small screen,
 
 ## 9. Create an attractive and accessible colour palette for a project
 
@@ -81,5 +102,11 @@ While not entirely accessible, and with lessons learned, our colour palette uses
 
 This can be done using the var keyword in css:
 ```css
-color: var(--blue);
+:root {
+--blue: rgb(0, 0, 255);
+}
+
+.arbitraryclass {
+background-color: var(--blue);
+}
 ```
